@@ -5,30 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu painel financeiro</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 720px; margin: 32px auto; padding: 0 16px; }
-    h1 { margin-bottom: 4px; }
-    h2 { margin-top: 32px; }
-    .card { border: 1px solid #ccc; border-radius: 8px; padding: 12px 16px; margin: 8px 0; font-size: 18px; }
-    footer { margin-top: 40px; font-size: 14px; color: #555; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 16px;
+      background: #f5f5f5;
+      color: #222;
+    }
+    h1 { font-size: 28px; }
+    h2 { font-size: 18px; margin-top: 32px; }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    footer {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
   <h1>Meu painel financeiro</h1>
 
   <h2>Economia</h2>
-  <div id="selic" class="card">Selic: Carregando...</div>
-  <div id="dolar" class="card">Dólar: Carregando...</div>
-  <div id="ipca" class="card">IPCA: Carregando...</div>
+  <div class="card" id="selic">Carregando...</div>
+  <div class="card" id="dolar">Carregando...</div>
+  <div class="card" id="ipca">Carregando...</div>
 
   <h2>Ações</h2>
   <div id="acoes">Carregando...</div>
 
   <footer>
-    <!-- Exercício 8: escreva aqui de onde vêm os dados -->
   </footer>
 
   <script>
-    // Escreva o seu código aqui, dentro desta tag script.
+    // Escreva o seu código aqui embaixo.
 
   </script>
 </body>

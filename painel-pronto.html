@@ -3,33 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu painel financeiro (pronto)</title>
+  <title>Meu painel financeiro</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 720px; margin: 32px auto; padding: 0 16px; }
-    h1 { margin-bottom: 4px; }
-    h2 { margin-top: 32px; }
-    .card { border: 1px solid #ccc; border-radius: 8px; padding: 12px 16px; margin: 8px 0; font-size: 18px; }
-    footer { margin-top: 40px; font-size: 14px; color: #555; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 16px;
+      background: #f5f5f5;
+      color: #222;
+    }
+    h1 { font-size: 28px; }
+    h2 { font-size: 18px; margin-top: 32px; }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    footer {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
   <h1>Meu painel financeiro</h1>
 
   <h2>Economia</h2>
-  <div id="selic" class="card">Selic: Carregando...</div>
-  <div id="dolar" class="card">Dólar: Carregando...</div>
-  <div id="ipca" class="card">IPCA: Carregando...</div>
+  <div class="card" id="selic">Carregando...</div>
+  <div class="card" id="dolar">Carregando...</div>
+  <div class="card" id="ipca">Carregando...</div>
 
   <h2>Ações</h2>
   <div id="acoes">Carregando...</div>
 
   <footer>
-    <!-- Exercício 8 -->
     Fontes: Banco Central do Brasil e brapi.dev. Dados para fins educativos, não são recomendação de investimento.
   </footer>
 
   <script>
-    // Exercício 2 (slide 8): a Selic
     async function mostrarSelic() {
       const url = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json';
       const resposta = await fetch(url);
@@ -39,7 +55,6 @@
         'Selic: <b>' + selic.valor + '% ao ano</b> <small>(' + selic.data + ')</small>';
     }
 
-    // Exercício 3 (slide 9): o dólar
     async function mostrarDolar() {
       const url = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json';
       const resposta = await fetch(url);
@@ -49,7 +64,6 @@
         'Dólar: <b>R$ ' + dolar.valor + '</b> <small>(' + dolar.data + ')</small>';
     }
 
-    // Exercício 6 (slide 14): o IPCA
     async function mostrarIpca() {
       const url = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/1?formato=json';
       const resposta = await fetch(url);
@@ -59,7 +73,6 @@
         'IPCA do mês: <b>' + ipca.valor + '%</b> <small>(' + ipca.data + ')</small>';
     }
 
-    // Exercício 5 (slide 12) e Exercício 7 (slide 14): as ações, com subiu ou caiu
     async function mostrarAcoes() {
       const url = 'https://brapi.dev/api/v2/stocks/quote?symbols=PETR4,VALE3,MGLU3,ITUB4';
       const resposta = await fetch(url);
